@@ -16,7 +16,6 @@ public static class SeedDataHelper
         using var scope = serviceProvider.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-        // For SQLite, use EnsureCreated or migrations
         context.Database.EnsureCreated();
 
         if (!context.Actors.Any())

@@ -1,5 +1,6 @@
 ﻿
 using API.Dtos;
+using API.Extensions;
 using Application.Accounts.Commands;
 using Application.Accounts.Queries;
 using Application.Accounts.Responses;
@@ -33,9 +34,10 @@ public class AccountsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<CreateAccountResponse>> CreateAccount(CreateAccountCommand dto, CancellationToken ct)
+    public async Task<ActionResult<CreateAccountResponse>> CreateAccount(CreateAccountDto dto, CancellationToken ct)
     {
-        var response = await _mediator.Send(dto, ct);
+        var command = new CreateAccountCommand(dto.ActorId, dto.CurrencyType.ToDomain());
+        var response = await _mediator.Send(command, ct);
 
         return Ok(response);
     }

@@ -314,8 +314,8 @@ curl -X POST "http://localhost:5011/api/v1.0/accounts" \
 
 ## Project Structure
 
-- **Application.API**: Web API project with controllers and DTOs
-- **Application.Application**: Application layer with commands, queries, and handlers
+- **API**: Web API project with controllers and DTOs
+- **Application**: Application layer with commands, queries, and handlers
 - **Domain**: Domain entities, value objects, and enums
 - **Infrastructure**: Data access and infrastructure concerns
 - **UnitTests**: Unit tests
