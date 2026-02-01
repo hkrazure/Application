@@ -9,7 +9,7 @@ public static class CurrencyDtoExtensions
     {
         return currencyDto switch
         {
-            Dtos.CurrencyDto.DKK => Currency.DKK,
+            CurrencyDto.DKK => Currency.DKK,
             _ => throw new ArgumentOutOfRangeException(nameof(currencyDto), currencyDto, "Unsupported currency")
         };
     }

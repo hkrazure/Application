@@ -1,6 +1,7 @@
 ﻿using API.Dtos;
-using API.Extensions;
 using Domain.ValueObjects;
+
+namespace API.Extensions;
 
 public static class AmountDtoExtensions
 {

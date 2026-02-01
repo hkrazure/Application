@@ -43,7 +43,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpPost("{id:guid}/deposits")]
-    public async Task<IActionResult> Deposit(Guid id, DepositAmoundDto dto, CancellationToken ct)
+    public async Task<IActionResult> Deposit(Guid id, DepositAmountDto dto, CancellationToken ct)
     {
         var command = new DepositAmountCommand(id, dto.Amount.ToDomain());
 
